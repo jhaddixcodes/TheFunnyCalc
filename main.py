@@ -105,7 +105,7 @@ class Calculator(tk.Frame):
         :param event: The configure event
         :return:
         """
-        ttk.Style().configure(event.widget.winfo_class(), wraplength=(event.widget.winfo_width() - 25))
+        ttk.Style().configure(event.widget.winfo_class(), wraplength=(event.widget.winfo_width() - 10))  # this line of code derived from one written by wyatt ballweber
 
     def handle_key_press(self, event):
         """
