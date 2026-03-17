@@ -400,14 +400,11 @@ def calculate(postfix_expression: Queue):
 
     expression_stack = ExpressionStack()
 
-    current_node = postfix_expression.front
-
-    while current_node is not None:
-        if isinstance(current_node.value, float):
-            expression_stack.push(current_node.value)
+    while not postfix_expression.is_empty():
+        if isinstance(postfix_expression.peek(), float):
+            expression_stack.push(postfix_expression.dequeue())
         else:
-            expression_stack.operator_functions[current_node.value]()
-        current_node = current_node.next
+            expression_stack.operator_functions[postfix_expression.dequeue()]()
     return expression_stack.result
 
 

@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
     for case in test_cases:
         results = []  # the actual numbers we get
-        deviations = []  # how far away output is from input (we want this to be far from the number but not too far because that isn't as funny
+        deviations = []  # how far away output is from input (we want this to be far from the number but not too far because that isn't as funny)
 
         for j in range(10000):
             current_result = uncorrect(case)
@@ -93,7 +93,7 @@ if __name__ == "__main__":
             deviations.append(abs(current_result - case))
 
         print(f"Average at {case}: {sum(results)/10000}")
-        print(f"Range at {case}: {min(results)} - {max(results)} ({max(results) - min(results)})")
+        print(f"Range at {case}: {min(results)} to {max(results)} ({max(results) - min(results)})")
         print(f"Average deviation at {case}: {sum(deviations)/10000}\n")
 
     end = time.perf_counter()
